@@ -23,24 +23,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu & Drawer Management
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
+  const navBackdrop = document.getElementById('navBackdrop');
+
+  function closeMobileMenu() {
+    if (navMenu) navMenu.classList.remove('open');
+    if (hamburgerBtn) {
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+
+  function openMobileMenu() {
+    if (navMenu) navMenu.classList.add('open');
+    if (hamburgerBtn) {
+      hamburgerBtn.classList.add('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+    }
+    if (navBackdrop) navBackdrop.classList.add('open');
+    document.body.classList.add('menu-open');
+  }
 
   if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = navMenu.classList.contains('open');
-      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
-    // Close menu when clicking on any link
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking on any link inside the menu
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', false);
+        closeMobileMenu();
       });
     });
+
+    // Close on pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Automatically close mobile menu if resized to desktop viewport
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
   // 3. Scrollspy for Navigation

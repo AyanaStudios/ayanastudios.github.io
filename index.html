@@ -69,7 +69,7 @@
         </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
+      <!-- Desktop & Mobile Nav Menu -->
       <ul class="nav-menu" id="navMenu">
         <li><a href="#about" class="nav-link">About Us</a></li>
         <li><a href="#app" class="nav-link">Our App</a></li>
@@ -77,7 +77,18 @@
         <li><a href="#gallery" class="nav-link">Screenshots</a></li>
         <li><a href="#values" class="nav-link">Pillars</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="https://ayanastudios.github.io/privacy-policy/index.html" target="_blank" rel="noopener" class="nav-link">Privacy Policy</a></li>
+        <li><a href="https://ayanastudios.github.io/privacy-policy/index.html" target="_blank" rel="noopener" class="nav-link">Privacy Policy ↗</a></li>
+        <li class="nav-menu-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.ayanastudios.abclearning" target="_blank" rel="noopener" class="btn btn-playstore">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186c-.352-.363-.556-.88-.556-1.464V3.278c0-.584.204-1.101.555-1.464zm1.47-1.47l11.458 6.446-2.744 2.744L5.079.344zm0 23.312l8.715-8.716 2.744 2.744L5.079 23.656zm12.928-7.272l3.415-1.921c.95-.534.95-1.408 0-1.942l-3.415-1.921-2.943 2.942 2.943 2.942z"/>
+            </svg>
+            <span class="btn-text-wrap">
+              <span class="btn-sub">Get on</span>
+              <span class="btn-title">Google Play</span>
+            </span>
+          </a>
+        </li>
       </ul>
 
       <!-- Nav Actions (Theme Toggle & CTA) -->
@@ -101,7 +112,7 @@
           </svg>
         </button>
 
-        <a href="https://play.google.com/store/apps/details?id=com.ayanastudios.abclearning" target="_blank" rel="noopener" class="btn btn-playstore" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.ayanastudios.abclearning" target="_blank" rel="noopener" class="btn btn-playstore nav-header-cta" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3.609 1.814L13.793 12 3.61 22.186c-.352-.363-.556-.88-.556-1.464V3.278c0-.584.204-1.101.555-1.464zm1.47-1.47l11.458 6.446-2.744 2.744L5.079.344zm0 23.312l8.715-8.716 2.744 2.744L5.079 23.656zm12.928-7.272l3.415-1.921c.95-.534.95-1.408 0-1.942l-3.415-1.921-2.943 2.942 2.943 2.942z"/>
           </svg>
@@ -113,14 +124,14 @@
 
         <!-- Mobile Hamburger Toggle -->
         <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
         </button>
       </div>
     </div>
+    <!-- Backdrop Overlay for Mobile Navigation Drawer -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
   </header>
 
   <main>
@@ -169,8 +180,8 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-val">Ages 2–6</span>
-              <span class="stat-lbl">Preschool & Toddlers</span>
+              <span class="stat-val">Ages 3–9</span>
+              <span class="stat-lbl">Preschool & Kids</span>
             </div>
             <div class="stat-item">
               <span class="stat-val">100%</span>
@@ -186,23 +197,25 @@
         <!-- Hero Visual Landscape Tablet Mockup -->
         <div class="hero-mockup-wrapper">
           <div class="mockup-card-main">
-            <img src="images/landscape_core_learning.png" alt="ABC Kids Learning Tablet Landscape Interface" class="mockup-img">
+            <img src="images/landscape_core_learning.png" alt="ABC Kids Learning Tablet Landscape Interface" class="mockup-img" width="540" height="304">
           </div>
 
           <!-- Floating Badges -->
-          <div class="floating-chip floating-chip-1">
-            <span class="chip-icon">📱</span>
-            <div class="chip-text">
-              <h4>Landscape Mode</h4>
-              <p>Tablet & Phone Optimized</p>
+          <div class="hero-chips-wrap">
+            <div class="floating-chip floating-chip-1">
+              <span class="chip-icon">📱</span>
+              <div class="chip-text">
+                <h4>Landscape Mode</h4>
+                <p>Tablet & Phone Optimized</p>
+              </div>
             </div>
-          </div>
 
-          <div class="floating-chip floating-chip-2">
-            <span class="chip-icon">🐵</span>
-            <div class="chip-text">
-              <h4>Guided Learning</h4>
-              <p>With Friendly Characters</p>
+            <div class="floating-chip floating-chip-2">
+              <span class="chip-icon">🐵</span>
+              <div class="chip-text">
+                <h4>Guided Learning</h4>
+                <p>With Friendly Characters</p>
+              </div>
             </div>
           </div>
         </div>
@@ -332,7 +345,7 @@
               <img src="logo.png" alt="ABC Kids Learning App Icon" class="app-big-logo">
               <div class="app-title-group">
                 <h3>ABC Kids Learning</h3>
-                <span class="app-package-id">com.ayanastudios.abclearning</span>
+                <span class="badge badge-primary">Preschool & Kindergarten • Ages 3–9</span>
               </div>
             </div>
 
@@ -653,7 +666,7 @@
                 Google Play Store ↗
               </a>
             </li>
-            <li><span style="font-size: 0.82rem; color: var(--text-muted);">Package: com.ayanastudios.abclearning</span></li>
+            <li><span style="font-size: 0.82rem; color: var(--text-muted);">Available for Android Phones & Tablets</span></li>
           </ul>
         </div>
       </div>
